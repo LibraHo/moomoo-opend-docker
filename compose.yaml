@@ -1,0 +1,23 @@
+services:
+  opend:
+    build: .
+    image: moomoo-opend:local
+    container_name: moomoo-opend
+    stdin_open: true
+    tty: true
+
+    command:
+      - -no_monitor=1
+      - -api_ip=0.0.0.0
+      - -api_port=11111
+      - -login_by_remember=1
+
+    volumes:
+      - ./app:/app
+      - ./home:/root
+    ports:
+      - "127.0.0.1:11111:11111"
+    environment:
+      TZ: Asia/Shanghai
+    restart: unless-stopped
+
