@@ -1,0 +1,10 @@
+/app/
+/home/
+/package/
+.env
+*.pem
+*.key
+*.p12
+*.pfx
+*.log
+*.dat
